@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>database</title>
+</head>
+<body>
+  <form method="post" autocomplete="off" name="google-sheet">
+  	<center><br><br>
+         <h1>Registration Form</h1><br>
+         <table border="5">	
+            
+             <tr><td><b>Name of the student : </b></td>
+             <td><input type="text" name="student Name"   required="" /></td>
+            </tr>
+            <tr><td><b>std mobile number : </b></td>
+            <td><input type="text" name="std mobile no"   required="" /></td>
+            </tr>
+            <tr><td><b>student DOB : </b></td>
+            <td><input type="date" name="student DOB"   required="" /></td>
+            </tr>
+            <tr><td><b>Gender : </b></td>
+             <td><input type="radio"  name="Gender" value="male" >male
+            <input type="radio"  name="Gender" value="female"  >female<br/></td>
+             </tr>
+          <tr><td><b>father name: </b></td>
+             <td><input type="text" name="father name"   required="" /></td>
+            </tr>
+<tr><td><b>qualification: </b></td>
+             <td><input type="text" name="qualification"   required="" /></td>
+            </tr>
+<tr><td><b>occupation: </b></td>
+             <td><input type="text" name="occupation"   required="" /></td>
+            </tr>
+<tr><td><b>mobile number: </b></td>
+             <td><input type="text" name="mobile number"   required="" /></td>
+            </tr>
+<tr><td><b>mother name: </b></td>
+             <td><input type="text" name="mother name"   required="" /></td>
+            </tr>
+<tr><td><b>qualification: </b></td>
+             <td><input type="text" name="qualification"   required="" /></td>
+            </tr>
+<tr><td><b>mobile number: </b></td>
+             <td><input type="text" name="mobile number"   required="" /></td>
+            </tr>
+<tr><td><b>student address: </b></td>
+             <td><input type="text" name="student address"   required="" /></td>
+            </tr>
+<tr><td><b>std register no: </b></td>
+             <td><input type="text" name="std register no"   required="" /></td>
+            </tr>
+           
+         </table>
+         <br><br>
+        <input type="submit" name="submit" value="Submit"/> 
+
+    </center>
+  </form>
+
+  <script type="text/javascript">
+
+
+	  const scriptURL = 'https://script.google.com/macros/s/AKfycbwkUY7bU8EiSt05SUqvSXeQ7l8307yfOaZ1C1TRtDoz2_Xyr3xwYcwIp2J080ULjk3o/exec'
+            const form = document.forms['google-sheet']
+          
+            form.addEventListener('submit', e => {
+              e.preventDefault()
+              fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                .then(response => alert("You have successfully submitted."))
+                .catch(error => console.error('Error!', error.message))
+            })
+  </script>
+</body>
+</html>
